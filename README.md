@@ -1,1 +1,1 @@
-# A static angularjs based blog application.
+# A static angularjs based blog application for my personal page
