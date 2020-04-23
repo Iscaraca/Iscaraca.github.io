@@ -6,7 +6,11 @@
 	}, {
 		"title": "Internship with AI start up: Tactile paving defect detection",
 		"exerpt": "Solo project using Albumentations, OpenCV and Tensorflow to collect data and train a model.",
-		"content": "Content yet to be updated."
+		"content": "Worked on a joint project with LTA analysing and identifying defects in tactile paving tiles in Singapore.
+		- Organised and edited code using Jupyter Notebooks.
+		- Used albumentations and imgaug python libraries to augment image data, experimented with computer vision and data labeling.
+		- Dealed with CSV files extensively, used python to parse and extract data from labels.
+		- Used Tensorflow to train models for defect detection, experimented with both DenseNet and RCNN."
 	}, {
 		"title": "Attendance taking app for schools",
 		"exerpt": "A simple web app to experiment with Flask WTForms and SQLAlchemy.",
