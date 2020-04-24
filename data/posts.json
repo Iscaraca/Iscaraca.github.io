@@ -14,6 +14,6 @@
 	}, {
 		"title": "Attendance taking app for schools",
 		"exerpt": "A simple web app to experiment with Flask WTForms and SQLAlchemy.",
-		"content": "Content yet to be updated."
+		"content": "This project is for my school's Computing CA, where every student must design a web app on the topic of \"smart schools\". I wanted to make an app that demonstrates Flask-WTF and Flask-SQLAlchemy using a SQLite database, storing both accounts and attendance timings in two distinct tables, to familiarise myself with OOP concepts.\n\nStudents must log in first with a username and full name, then proceed to Confirm Attendance to book in with their username, class and a validation code displayed on the teachers' end. After confirming their attendance, their details and time of confirmation will be shown on Attendance Logs.\n\nTeachers must display a unique validation code on their screens inaccessible to students. Accessing this code would require navigating to /password.html. The code will refresh every day at 00 00."
 	}
 ]
