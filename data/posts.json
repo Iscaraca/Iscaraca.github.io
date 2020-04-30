@@ -1,5 +1,9 @@
 [
 	{
+		"title": "",
+		"exerpt": "Experimenting with using AngularJS for a blog-like personal site.",
+		"content": "Content yet to be updated."
+	}, {
 		"title": "Making a push-up counter using SparkAR",
 		"exerpt": "Using the new Facebook AR studio and Javascript to make Instagram filters for companies.",
 		"content": "Content yet to be updated."
@@ -10,10 +14,10 @@
 	}, {
 		"title": "Internship with AI start up: Tactile paving defect detection",
 		"exerpt": "Solo project using Albumentations, OpenCV and Tensorflow to collect data and train a model.",
-		"content": "Worked on a joint project with LTA analysing and identifying defects in tactile paving tiles in Singapore.\n\n- Organised and edited code using Jupyter Notebooks.\n- Used albumentations and imgaug python libraries to augment image data, experimented with computer vision and data labeling.\n- Dealed with CSV files extensively, used python to parse and extract data from labels.\n- Used Tensorflow to train models for defect detection, experimented with both DenseNet and RCNN."
+		"content": "Worked on a joint project with LTA analysing and identifying defects in tactile paving tiles in Singapore.\n\n- Organised and edited code using Jupyter Notebooks.\n- Used albumentations and imgaug python libraries to augment image data, experimented with computer vision and data labeling.\n- Dealed with CSV files extensively, used python to parse and extract data from labels.\n- Used Tensorflow to train models for defect detection, experimented with both DenseNet and RCNN.\n\nScripts I've written can be found on my Github at <a href='https://github.com/Iscaraca/tensorflow-python'>this link</a>."
 	}, {
 		"title": "Attendance taking app for schools",
 		"exerpt": "A simple web app to experiment with Flask WTForms and SQLAlchemy.",
-		"content": "This project is for my school's Computing CA, where every student must design a web app on the topic of \"smart schools\". I wanted to make an app that demonstrates Flask-WTF and Flask-SQLAlchemy using a SQLite database, storing both accounts and attendance timings in two distinct tables, to familiarise myself with OOP concepts.\n\nStudents must log in first with a username and full name, then proceed to Confirm Attendance to book in with their username, class and a validation code displayed on the teachers' end. After confirming their attendance, their details and time of confirmation will be shown on Attendance Logs.\n\nTeachers must display a unique validation code on their screens inaccessible to students. Accessing this code would require navigating to /password.html. The code will refresh every day at 00 00."
+		"content": "This project is for my school's Computing CA, where every student must design a web app on the topic of \"smart schools\". I wanted to make an app that demonstrates Flask-WTF and Flask-SQLAlchemy using a SQLite database, storing both accounts and attendance timings in two distinct tables, to familiarise myself with OOP concepts.\n\nStudents must log in first with a username and full name, then proceed to Confirm Attendance to book in with their username, class and a validation code displayed on the teachers' end. After confirming their attendance, their details and time of confirmation will be shown on Attendance Logs.\n\nTeachers must display a unique validation code on their screens inaccessible to students. Accessing this code would require navigating to /password.html. The code will refresh every day at 00 00.\n\nWebsite can be found here at <a href='https://smattendance.herokuapp.com/'>this link</a>."
 	}
 ]
