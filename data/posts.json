@@ -1,8 +1,8 @@
 [
 	{
-		"title": "",
-		"exerpt": "Experimenting with using AngularJS for a blog-like personal site.",
-		"content": "Content yet to be updated."
+		"title": "Learning Go by doing programming tasks",
+		"exerpt": "Using a hands-on apprach instead of watching courses and reading books to learn a new language.",
+		"content": "This is a challenge to complete one (or more if I'm feeling good about myself) programming task(s) a day, but the catch is that I can only do it in Go. I have never used Go before this, so I'm doing this in hopes of getting fluent at it eventually. As I complete tasks, I will note down the things I've learnt in this README together with the date of completion to track progress.\n\nI'm learning Go because:\n- It's supposedly great for web development\n- I use statically typed languages a lot (and I prefer to use them over dynamically typed languages)\n- Go doesn't have excessive boilerplate code unlike Ruby\n- Fast compile times\n\nThe repository at https://github.com/Iscaraca/codetask-Go is constantly updated every day with new problems and my solutions in Go. With this self-directed method of learning forcing me to do research, read the docs and apply what I've learnt, I can hopefully be more fluent so I can continue with using Go web development."
 	}, {
 		"title": "Making a push-up counter using SparkAR",
 		"exerpt": "Using the new Facebook AR studio and Javascript to make Instagram filters for companies.",
@@ -14,10 +14,10 @@
 	}, {
 		"title": "Internship with AI start up: Tactile paving defect detection",
 		"exerpt": "Solo project using Albumentations, OpenCV and Tensorflow to collect data and train a model.",
-		"content": "Worked on a joint project with LTA analysing and identifying defects in tactile paving tiles in Singapore.\n\n- Organised and edited code using Jupyter Notebooks.\n- Used albumentations and imgaug python libraries to augment image data, experimented with computer vision and data labeling.\n- Dealed with CSV files extensively, used python to parse and extract data from labels.\n- Used Tensorflow to train models for defect detection, experimented with both DenseNet and RCNN.\n\nScripts I've written can be found on my Github at <a href='https://github.com/Iscaraca/tensorflow-python'>this link</a>."
+		"content": "Worked on a joint project with LTA analysing and identifying defects in tactile paving tiles in Singapore.\n\n- Organised and edited code using Jupyter Notebooks.\n- Used albumentations and imgaug python libraries to augment image data, experimented with computer vision and data labeling.\n- Dealed with CSV files extensively, used python to parse and extract data from labels.\n- Used Tensorflow to train models for defect detection, experimented with both DenseNet and RCNN.\n\nScripts I've written can be found on my Github at https://github.com/Iscaraca/tensorflow-python."
 	}, {
 		"title": "Attendance taking app for schools",
 		"exerpt": "A simple web app to experiment with Flask WTForms and SQLAlchemy.",
-		"content": "This project is for my school's Computing CA, where every student must design a web app on the topic of \"smart schools\". I wanted to make an app that demonstrates Flask-WTF and Flask-SQLAlchemy using a SQLite database, storing both accounts and attendance timings in two distinct tables, to familiarise myself with OOP concepts.\n\nStudents must log in first with a username and full name, then proceed to Confirm Attendance to book in with their username, class and a validation code displayed on the teachers' end. After confirming their attendance, their details and time of confirmation will be shown on Attendance Logs.\n\nTeachers must display a unique validation code on their screens inaccessible to students. Accessing this code would require navigating to /password.html. The code will refresh every day at 00 00.\n\nWebsite can be found here at <a href='https://smattendance.herokuapp.com/'>this link</a>."
+		"content": "This project is for my school's Computing CA, where every student must design a web app on the topic of \"smart schools\". I wanted to make an app that demonstrates Flask-WTF and Flask-SQLAlchemy using a SQLite database, storing both accounts and attendance timings in two distinct tables, to familiarise myself with OOP concepts.\n\nStudents must log in first with a username and full name, then proceed to Confirm Attendance to book in with their username, class and a validation code displayed on the teachers' end. After confirming their attendance, their details and time of confirmation will be shown on Attendance Logs.\n\nTeachers must display a unique validation code on their screens inaccessible to students. Accessing this code would require navigating to /password.html. The code will refresh every day at 00 00.\n\nWebsite can be found at https://smattendance.herokuapp.com."
 	}
 ]
