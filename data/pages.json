@@ -3,8 +3,8 @@
 		"title": "About Isaac",
 		"content": "A young lad breaking through limits in technology, dealing extensively with both circuit design and computer programming.\n\nI create a variety of mobile and web applications for a myriad of purposes, ranging from mobile apps that deal with bookings at national events to websites that use artificial intelligence to identify meme formats. All for my relentless passion for and pursuit of knowledge acquisition.\n\nI have presented my projects to industry professionals at Amazon, Google, DSTA Singapore and more. With the knowledge and experience I'm gaining, I am always excited to share my ideas and skills with others to push them to their fullest potential."
 	}, {
-		"title": "Calendar of Events",
-		"content": "I'll think abt this one and update later tdy lol"
+		"title": "Upcoming Events",
+		"content": "- HCI Cyberthon, a team jeopardy-style CTF competition (2/5/2020)\n- Jumping jack validation software using OpenCV and OpenPose to analyse skeleton poses in webcam video and count the number of jumping jacks done, for DHS Infocomm Club (4/5/2020)\n- Golang programming tasks (updated daily, refer to blog post for more details)\n- Web development using Go, create a simple webpage that can gain access to webcam and stream the video feed on the page (19/5/2020)\n- Web scraper using Python and Scrapy that looks for upcoming competitive programming competitions every day and sends alerts to my email (25/5/2020)"
 	}, {
 		"title": "Contact Me",
 		"content": "Linkedin: https://www.linkedin.com/in/isaac-chen-jing-de/"
