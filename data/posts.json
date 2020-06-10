@@ -1,5 +1,9 @@
 [
 	{
+		"title": "Snowman",
+		"exerpt": "A lightweight and simple programming language.",
+		"content": "Still in development. More updates will be released on my Github."
+	}, {
 		"title": "Learning Go by doing programming tasks",
 		"exerpt": "Using a hands-on apprach instead of watching courses and reading books to learn a new language.",
 		"content": "This is a challenge to complete one (or more if I'm feeling good about myself) programming task(s) a day, but the catch is that I can only do it in Go. I have never used Go before this, so I'm doing this in hopes of getting fluent at it eventually. As I complete tasks, I will note down the things I've learnt in the Github repository README together with the date of completion to track progress.\n\nI'm learning Go because:\n- It's supposedly great for web development\n- I use statically typed languages a lot (and I prefer to use them over dynamically typed languages)\n- Go doesn't have excessive boilerplate code unlike Ruby\n- Fast compile times\n\nThe repository at https://github.com/Iscaraca/codetask-Go is constantly updated every day with new problems and my solutions in Go. With this self-directed method of learning forcing me to do research, read the docs and apply what I've learnt, I can hopefully be more fluent so I can continue with using Go web development."
