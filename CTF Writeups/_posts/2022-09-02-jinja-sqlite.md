@@ -35,7 +35,7 @@ Now that we have an understanding of how a user might interact with the website,
 
 ## Working backwards from the flag: Error-based Blind SQL Injection
 
-Let's take a closer look at the source code. Looking at the server side, we can see that the flag is stored as the password under the username `flag` in an sqlite database `users`. However, getting access to this flag value is not going to be easy. We can onky communicate with the database through the provided API, and the API only returns true or false values depending on whether our requests return the flag or not.
+Let's take a closer look at the source code. Looking at the server side, we can see that the flag is stored as the password under the username `flag` in an sqlite database `users`. However, getting access to this flag value is not going to be easy. We can only communicate with the database through the provided API, and the API only returns true or false values depending on whether our requests return the flag or not.
 
 ```python
 if(len(rows) > 0):  # Rows is the return value of our request
