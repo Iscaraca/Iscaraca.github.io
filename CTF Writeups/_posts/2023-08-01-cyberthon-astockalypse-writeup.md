@@ -2,6 +2,7 @@
 layout: post
 title: Cyberthon 2023 - Astockalypse (Author Writeup + Notes)
 author: Isaac
+redirect_from: /2023-08-01-cyberthon-astockalypse-writeup
 ---
 
 {% raw %}

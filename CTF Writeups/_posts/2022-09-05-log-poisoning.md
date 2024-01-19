@@ -2,6 +2,7 @@
 layout: post
 title: Log File Poisoning from Local File Inclusion
 author: Isaac
+redirect_from: /2022-09-05-log-poisoning
 ---
 
 {% raw %}

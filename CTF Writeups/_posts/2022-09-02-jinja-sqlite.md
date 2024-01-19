@@ -2,6 +2,7 @@
 layout: post
 title: RCE using SQLite3 Injection and Jinja2 SSTI
 author: Isaac
+redirect_from: /2022-09-02-jinja-sqlite
 ---
 
 {% raw %}
