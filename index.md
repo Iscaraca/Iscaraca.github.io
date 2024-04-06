@@ -75,6 +75,7 @@ _Jan 2020 - Apr 2020 · 4 months_
 <br>
 
 ## Awards (2023 and later)
+- [HTX x SANS TechX Summit CTF 2024](https://www.htx.gov.sg/techx/txs2024) - 1st Place
 - [STANDCON CTF 2023](https://standcon.n0h4ts.com/) - 1st Place Local
 - [BrainHack TIL 2023](https://www.dsta.gov.sg/brainhack) - 2nd Place
 - [WxMCTF 2023](https://ctf.mcpt.ca/contest/wxmctf) - 1st Place
