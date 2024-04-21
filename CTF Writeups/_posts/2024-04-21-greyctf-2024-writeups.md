@@ -173,6 +173,8 @@ for i in "0123456789ABCDEFGHIJKLMNOPQRSTUVQXYZ{}f":
 
 More information [here](https://aszx87410.github.io/beyond-xss/en/ch3/css-injection/). I extracted the flag by hand, as scripting this challenge surely would've taken more time.
 
+<br>
+
 # Misc Challenges
 
 I'm only going to go through the relatively harder ones.
