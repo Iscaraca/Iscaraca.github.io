@@ -75,6 +75,7 @@ _Jan 2020 - Apr 2020 · 4 months_
 <br>
 
 ## Awards (2023 and later)
+- [Grey Cat The Flag 2024 Qualifiers](https://ctftime.org/event/2242) - 1st Place Local
 - [HTX x SANS TechX Summit CTF 2024](https://www.htx.gov.sg/techx/txs2024) - 1st Place
 - [STANDCON CTF 2023](https://standcon.n0h4ts.com/) - 1st Place Local
 - [BrainHack TIL 2023](https://www.dsta.gov.sg/brainhack) - 2nd Place
