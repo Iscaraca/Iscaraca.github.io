@@ -19,20 +19,25 @@ At the end of this writeup are my thoughts on challenge creation.
 > 📘 Challenge description:
 >
 > 
+> 
 > "Ever heard of sabacc?"
 > 
 > "I've played it a couple times."
 > 
 > 
+> 
 > You eye the stifling pile of credit on Lando's side of the table, allowing yourself a wry smile.
+> 
 > 
 > 
 > "Having a good day, I reckon."
 > 
 > 
+> 
 > "Oh, you ain't seen nothing yet, Han. I bet my ship I win this next game."
 > 
 > You spy a faint glimmer in his eyes typical of all smugglers, one of trickery and deceit.
+> 
 > 
 > 
 > "Not playing fair, I suppose. Well, two can play at that game. After all..."
@@ -55,13 +60,13 @@ In this challenge, you play against a bot in a modified version of blackjack, wh
 
 The rules of the game are simple.
 
-> Your opponent will make the first move.
-> 
-> At every turn, you can make one of 3 moves:
-> 
-> Hit: Draw a new card from the deck, and add it to your hand.
-> Stand: End your turn without taking a card.
-> Reveal: Place your hand on the table face up, and force your opponent to do the same. The winner will be judged. You cannot do this on the move that opens the game.
+- Your opponent will make the first move.
+
+- At every turn, you can make one of 3 moves:
+
+    - Hit: Draw a new card from the deck, and add it to your hand.
+    - Stand: End your turn without taking a card.
+    - Reveal: Place your hand on the table face up, and force your opponent to do the same. The winner will be judged. You cannot do this on the move that opens the game.
 
 <br>
 
