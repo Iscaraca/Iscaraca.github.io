@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Cyberthon 2024 - The Galaxy's Best Smuggler (Author Writeup + Notes)
+title: Cyberthon 2024 - TGBS (Author Writeup + Notes)
 author: Isaac
 ---
 
 {% raw %}
 
-Cyberthon is an annual CTF competition targeted towards JC students in Singapore, jointly organised by HCI, CSIT, and the DIS. This year, I had the opportunity to author a challenge for the web category.
+Cyberthon is an annual CTF competition targeted towards JC students in Singapore. This year, I had the opportunity to author a challenge for the web category: The Galaxy's Best Smuggler.
 
 <br>
 
@@ -18,16 +18,25 @@ At the end of this writeup are my thoughts on challenge creation.
 
 > 📘 Challenge description:
 >
+> 
 > "Ever heard of sabacc?"
+> 
 > "I've played it a couple times."
 > 
+> 
 > You eye the stifling pile of credit on Lando's side of the table, allowing yourself a wry smile.
+> 
+> 
 > "Having a good day, I reckon."
 > 
+> 
 > "Oh, you ain't seen nothing yet, Han. I bet my ship I win this next game."
+> 
 > You spy a faint glimmer in his eyes typical of all smugglers, one of trickery and deceit.
 > 
+> 
 > "Not playing fair, I suppose. Well, two can play at that game. After all..."
+> 
 > "They don't call me the galaxy's best SMUGGLER for nothing." 
 
 <br>
