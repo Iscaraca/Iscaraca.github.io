@@ -44,7 +44,7 @@ header h5 {
 code {
   padding: 2px 4px;
   vertical-align: text-bottom;
-  font-weight: 600;
+  font-weight: 300;
   font-family: "Courier New", monospace;
 }
 /* 06 Primary color */
@@ -56,6 +56,12 @@ h1,
 h2,
 strong {
   font-weight: 800;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Collapse borders to connect cells */
+  margin: 20px 0;
 }
 
 th,
