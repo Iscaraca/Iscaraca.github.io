@@ -1,75 +1,59 @@
 /* Style inspiration and settings adapted from https://github.com/jgthms/web-design-in-4-minutes*/
-
 /* Base */
 html {
-  font-size: 18px;
+  font-size: 20px;
 }
-
 /* 01 Font family */
-
 body {
-  font-family: "Courier New", "Roboto Mono", monospace;
-  font-weight: 800;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
 }
-
 /* 03 Spacing */
-
-
 .padded {
   padding-top: 30px;
   padding-bottom: 30px;
   line-height: 30px;
 }
-
 .main-content {
   padding-top: 30px;
   padding-bottom: 30px;
   line-height: 30px;
 }
-
 div.main-content h2 {
   padding-top: 15px;
   padding-bottom: 5px;
 }
-
 header h1, h5 {
   display: inline;
 }
-
 /* 04 Color and contrast */
-
 body {
   color: #212427;
   background-color: #c5ccce;
 }
-
 h1,
 h2,
 strong {
   color: #06052c;
+  font-family: "Roboto Mono", monospace;
 }
-
 header h5 {
   font-weight: lighter;
 }
-
 /* 05 Balance */
-
 code {
   padding: 2px 4px;
   vertical-align: text-bottom;
+  font-weight: 600;
+  font-family: "Roboto Mono", monospace;
 }
-
 /* 06 Primary color */
-
 a {
   color: #05121d;
 }
-
 /* 07 Secondary colors */
-
 h1,
 h2,
 strong {
-  font-weight: 500;
+  font-weight: 800;
 }
