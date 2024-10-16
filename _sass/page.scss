@@ -57,3 +57,10 @@ h2,
 strong {
   font-weight: 800;
 }
+
+th,
+td {
+  border: 3px solid #212427; /* Add solid borders */
+  padding: 10px; /* Add padding inside cells */
+  text-align: left; /* Align text to the left */
+}
