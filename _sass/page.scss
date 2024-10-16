@@ -5,7 +5,7 @@ html {
 }
 /* 01 Font family */
 body {
-  font-family: "Courier New", monospace;
+  font-family: "Consolas", monospace;
   font-weight: 600;
 }
 /* 03 Spacing */
@@ -35,7 +35,7 @@ h1,
 h2,
 strong {
   color: #06052c;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Courier New", monospace;
 }
 header h5 {
   font-weight: lighter;
@@ -45,7 +45,7 @@ code {
   padding: 2px 4px;
   vertical-align: text-bottom;
   font-weight: 600;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Courier New", monospace;
 }
 /* 06 Primary color */
 a {
