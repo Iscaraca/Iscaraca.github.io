@@ -28,13 +28,13 @@ header h1, h5 {
 }
 /* 04 Color and contrast */
 body {
-  color: #212427;
-  background-color: #c5ccce;
+  color: #393e46;
+  background-color: #fffbe0;
 }
 h1,
 h2,
 strong {
-  color: #06052c;
+  color: #222831;
   font-family: "Courier New", monospace;
 }
 header h5 {
@@ -49,7 +49,7 @@ code {
 }
 /* 06 Primary color */
 a {
-  color: #05121d;
+  color: #393e46;
 }
 /* 07 Secondary colors */
 h1,
@@ -66,7 +66,7 @@ table {
 
 th,
 td {
-  border: 3px solid #212427; /* Add solid borders */
+  border: 3px solid #393e46; /* Add solid borders */
   padding: 10px; /* Add padding inside cells */
   text-align: left; /* Align text to the left */
 }
