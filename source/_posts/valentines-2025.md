@@ -10,6 +10,6 @@ categories: Puzzles
 ![grid](it-takes-two.png)
 
 Normal [Shakashaka rules](https://puzz.link/rules.html?shakashaka) apply.
-Diagonal red lines in the above grid are not required to solve the puzzle, but should be considered when looking at the completed grid.
+Diagonal red lines in the above grid must lie on slanted surfaces.
 
-Solve the puzzle on [puzzlink](https://puzz.link/p?shakashaka/10/10/pcgcocn72cp.gclcsclch7cg). Happy Valentine's Day!
+Solve the puzzle on [puzzlink](https://puzz.link/p?shakashaka/10/10/pcgcocn72crclcsclch7cg). Happy Valentine's Day!
