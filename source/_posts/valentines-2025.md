@@ -1,5 +1,5 @@
 ---
-title: Valentine's Day 2024 Puzzle - It Takes Two
+title: Valentine's Day 2025 Puzzle - It Takes Two
 date: 2025-02-16
 tags: Shakashaka
 categories: Puzzles
