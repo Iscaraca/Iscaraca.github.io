@@ -20,8 +20,8 @@ At the end of this writeup are my thoughts before, during and after challenge cr
 
 The challenge involves two separate websites, one being the website exposed on Apocalypse's end and the other a submission portal to hand your investigation results in.
 
-![Astockalypse front page](/img/astockalypse/mainpg.png)
-![Submission front page](/img/astockalypse/mainpg2.png)
+![Astockalypse front page](mainpg.png)
+![Submission front page](mainpg2.png)
 
 (I had a field day with these backgrounds btw)
 

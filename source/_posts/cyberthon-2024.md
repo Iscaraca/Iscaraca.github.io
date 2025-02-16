@@ -48,7 +48,7 @@ At the end of this writeup are my thoughts on challenge creation.
 In this challenge, you play against a bot in a modified version of blackjack, where the sweet spot is 20. Your opponent has rigged the cards such that they'll always draw 20 at the start every time, while you'll draw a measly 2. To get the flag, you'll have to win the game.
 
 
-![Sabacc game page](/img/tgbs/sabacc.png)
+![Sabacc game page](sabacc.png)
 
 
 The rules of the game are simple.
@@ -156,7 +156,7 @@ In this section, it is important that **all requests are sent to the proxy direc
 We'll be monitoring HAProxy's ethernet interface for this section. On round 3, the bot will send a GET request to the `/reveal` endpoint with its cookie.
 
 
-![Reveal request](/img/tgbs/reveal.png)
+![Reveal request](reveal.png)
 
 
 ```
@@ -233,7 +233,7 @@ When the server is ready to process its next request, it reads the above as one 
 Just sending this payload once will not work. Looking at the edgeshark capture, we can see that our TCP stream is closing right after we send our payload, and the GET request to `/reveal` doesn't use the same stream. 
 
 
-![Stream capture](/img/tgbs/stream.png)
+![Stream capture](stream.png)
 
 
 The issue is that Gunicorn spawns multiple threads per worker, so smuggling one of them won't be enough. The simple workaround here is to send our payload to the proxy many times to ensure that all the TCP streams get polluted with our payload.
@@ -273,13 +273,13 @@ Content-Length: 30
 ```
 
 
-![Forced draw](/img/tgbs/forced.png)
+![Forced draw](forced.png)
 
 
 And all we have to do now is reveal.
 
 
-![Win](/img/tgbs/win.png)
+![Win](win.png)
 
 
 ```

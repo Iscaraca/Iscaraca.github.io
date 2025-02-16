@@ -40,7 +40,6 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -98,13 +97,18 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: butterfly
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: ''
-
 search:
   path: search.xml
   field: post
   content: true
   format: html
+
+deploy:
+  type: git
+  repo: https://github.com/Iscaraca/Iscaraca.github.io
+  branch: gh-pages
+
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true

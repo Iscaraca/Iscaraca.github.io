@@ -6,11 +6,11 @@ categories: CTF Writeups
 ---
 I participated under team **youtiaos** and we ended 1st place local.
 
-![scoreboard](/img/greyctf-2024/scoreboard.png)
+![scoreboard](scoreboard.png)
 
 I was solving in the web and misc categories. The specific challenges I solved are in the image below.
 
-![challenges](/img/greyctf-2024/challenges.png)
+![challenges](challenges.png)
 
 I'll update this writeup with the flags once the challenges are back up.
 
