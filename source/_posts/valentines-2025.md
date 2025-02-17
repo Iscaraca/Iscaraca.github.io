@@ -1,5 +1,5 @@
 ---
-title: Valentine's Day 2025 Puzzle - Shot Through the Heart
+title: Valentine's Day 2025 Puzzle - Shot Through The Heart
 date: 2025-02-14
 tags: Shakashaka
 categories: Puzzles
