@@ -259,7 +259,7 @@ footer:
   owner:
     enable: true
     since: 2019
-  custom_text:
+  custom_text: Background images from <a href="https://braceyourselfgames.com/cobalt-core/">Cobalt Core</a>!
   # Copyright of theme and framework
   copyright: true
 
