@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>The Art Of Writing A Good Introductory CTF Challenge | Iscara</title><meta name="author" content="Iscara"><meta name="copyright" content="Iscara"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Making challenges for beginners is a lot, lot tougher than making challenges for seasoned CTF players. The yoke of sparking fresh interest in cybersecurity always feels heavy on my shoulders, and ther">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Art Of Writing A Good Introductory CTF Challenge">
+<meta property="og:url" content="http://iscaraca.github.io/2025/09/18/introductory/index.html">
+<meta property="og:site_name" content="Iscara">
+<meta property="og:description" content="Making challenges for beginners is a lot, lot tougher than making challenges for seasoned CTF players. The yoke of sparking fresh interest in cybersecurity always feels heavy on my shoulders, and ther">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://iscaraca.github.io/img/avatar-icon.png">
+<meta property="article:published_time" content="2025-09-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-15T13:17:09.064Z">
+<meta property="article:author" content="Iscara">
+<meta property="article:tag" content="Challenge Creation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://iscaraca.github.io/img/avatar-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Art Of Writing A Good Introductory CTF Challenge",
+  "url": "http://iscaraca.github.io/2025/09/18/introductory/",
+  "image": "http://iscaraca.github.io/img/avatar-icon.png",
+  "datePublished": "2025-09-17T16:00:00.000Z",
+  "dateModified": "2025-10-15T13:17:09.064Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Iscara",
+      "url": "http://iscaraca.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://iscaraca.github.io/2025/09/18/introductory/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'The Art Of Writing A Good Introductory CTF Challenge',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/cobaltcore-bg.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/cobaltcore.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Iscara</span></a><a class="nav-page-title" href="/"><span class="site-name">The Art Of Writing A Good Introductory CTF Challenge</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">The Art Of Writing A Good Introductory CTF Challenge</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-09-17T16:00:00.000Z" title="Created 2025-09-18 00:00:00">2025-09-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-10-15T13:17:09.064Z" title="Updated 2025-10-15 21:17:09">2025-10-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF-Writeups/">CTF Writeups</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>Making challenges for beginners is a lot, lot tougher than making challenges for seasoned CTF players. The yoke of sparking fresh interest in cybersecurity always feels heavy on my shoulders, and there’s just so much to consider. Every time I try, there’s always something new I know I could improve on.</p>
+<p>This post is a reflection on my personal refinement of the process, and my definition of a good introductory CTF challenge. It’ll be framed by the challenges I’ve made in the past, my interactions with people attempting them, as well as my own journey as a beginner many years ago. Let’s start in 2023.</p>
+<h2 id="2023-Cyberthon"><a href="#2023-Cyberthon" class="headerlink" title="2023 - Cyberthon"></a>2023 - Cyberthon</h2><p>This was a CTF held for Junior College students in Singapore. CSIT, one of the organisers, kindly offered some of us working with them at the time the opportunity to write <a target="_blank" rel="noopener" href="https://github.com/Iscaraca/CTF-Challenges/tree/main/cyberthon2023/astockalypse">challenges</a> for the competition.</p>
+<h3 id="On-JC-students"><a href="#On-JC-students" class="headerlink" title="On JC students"></a>On JC students</h3><p>It was exciting, going from a participant many years ago to a challenge author. However, unlike the earlier CTF I wrote for, TISC 2023, this CTF was the gateway into cybersecurity for many students. The weight of this responsibility ate at me incessantly.</p>
+<p>I know that some JC students are very skilled. These aren’t the people I’m writing for. This post, and all challenges contained within, are written with the beginner in mind. Cyberthon is organised for getting more JC students into cybersecurity for publicity and recruitment. This is different from regular CTFs, where the goal is to inflict as much pain as possible over the weekend.</p>
+<h3 id="The-data-science-category"><a href="#The-data-science-category" class="headerlink" title="The data science category"></a>The data science category</h3><p>I was tasked with writing a challenge for the data science category. </p>
+<p>I didn’t have a lot of challenge creation&#x2F;teaching experience back then, so most of my decisions were shaped by my experience as a participant in 2020&#x2F;2021. As a participant, I remembered thinking that the kaggle-style challenges weren’t extremely relevant to cybersecurity, so I ignored them. I wanted to break free from the model training convention and do something a bit different. Adversarial ML seemed the most relevant to cybersecurity, so I based the challenge around model stealing.</p>
+<p><img src="/2025/09/18/introductory/cyberthon2023.png" alt="challenge page" title="Throwback to the Astockalypse landing page"></p>
+<p>This was something I think I did well in. AI attacks have been getting more and more prevalent recently, and a bunch of AI CTFs have been popping up over the past few years, with the sole focus of exploiting deployed ML models. It was a <strong>realistic</strong> attack, put forth in a simple and understandable way to participants. If participants are able to <strong>contextualise</strong> the attack to the products they use&#x2F;design, they’re more likely to be sold by the importance of security.</p>
+<h3 id="Why-Cyberthon-wasn’t-effective-for-me"><a href="#Why-Cyberthon-wasn’t-effective-for-me" class="headerlink" title="Why Cyberthon wasn’t effective for me"></a>Why Cyberthon wasn’t effective for me</h3><p>In JC, I was into robotics and general software development. Cyberthon failed to get me interested in cybersecurity. I wanted to think about why, and how I could tailor my challenge to students like me.</p>
+<p>I remember being very frustrated and giving up often during Cyberthon, regrettably so. It was not a pleasant experience for me, and at the time, I chalked it up to cybersecurity having a high barrier of entry. When I was creating my challenge, I wanted it to be <strong>simple and straightforward</strong> to lower that barrier and give newer teams the <em>satisfaction of a solve</em>. I achieved my goal somewhat; over 40 teams solved my challenge. But were they <em>satisfied</em>?</p>
+<p>It’s hard to say. Coming up with the solution was really easy, even for new teams. Knowledge of python and scikit-learn was all you needed, and examples of the latter were everywhere on the internet. I thought the solution was clever enough to satisfy the students, but after talking with many students, I realised that most of them craved a bit more of a challenge. It made sense: satisfaction comes from learning, and the best learning is often done through struggle. It seems that I’ve underestimated my demographic.</p>
+<h2 id="2024-Cyberthon"><a href="#2024-Cyberthon" class="headerlink" title="2024 - Cyberthon"></a>2024 - Cyberthon</h2><p>The next year, I was given the opportunity to author a <a target="_blank" rel="noopener" href="https://github.com/Iscaraca/CTF-Challenges/tree/main/cyberthon2024/the_galaxys_best_smuggler">challenge</a> for the web category. This time, I was armed with the experience of the year before, and was ready to write an effective introductory challenge. At least that was what I had in mind.</p>
+<h3 id="My-challenge-ended-up-being-TOO-difficult…"><a href="#My-challenge-ended-up-being-TOO-difficult…" class="headerlink" title="My challenge ended up being TOO difficult…"></a>My challenge ended up being TOO difficult…</h3><p>I wanted to give students a real challenge this time, to enhance the learning experience. I cranked the difficulty up a notch or three, and based it on a <em>unique and cool</em> vulnerability: HTTP request smuggling. I even used it in an <em>interesting and realistic</em> way: to interfere with your opponent’s moves in an online card game. What could go wrong?</p>
+<p><strong>Only one person solved my challenge.</strong> I’m pretty sure they were the only person who attempted the challenge within a reasonable capacity as well. God, balancing is tough.</p>
+<p><img src="/2025/09/18/introductory/cyberthon2024.png" alt="challenge page" title="Throwback to the Sabacc landing page"></p>
+<p>I had even suspected that the challenge was too difficult before the competition. It was hard to gauge the level of difficultly I should’ve gone for, especially since I only had a lower bound. The deployed challenge even included a bunch of free hints just to put a bandaid on the gaping wound.</p>
+<h3 id="The-folly-of-indulgence"><a href="#The-folly-of-indulgence" class="headerlink" title="The folly of indulgence"></a>The folly of indulgence</h3><p><em>Looking back, it was also partly my own hubris that led to this.</em> In my excitement, I failed to consider the student perspective with as much nuance as I should have. <strong>When writing introductory challenges, the student experience always comes first.</strong> My urge to share cool things I’ve learnt, my portfolio, all that comes secondary to the target audience. Having the ability to teach and guide a new generation of people interested in cybersecurity is a hefty onus. It has been tough to keep this in my mind always. Often, I find myself straying from this and going on long rambles. I try to remind myself, but do stop me if it slips and I go too far.</p>
+<h2 id="2025-Greyhats-Welcome-CTF"><a href="#2025-Greyhats-Welcome-CTF" class="headerlink" title="2025 - Greyhats Welcome CTF"></a>2025 - Greyhats Welcome CTF</h2><p>This time, I had a better idea of the difficulty I was going for. Not too trivial, such that solving the challenge didn’t require much pondering, but not difficult. When writing the challenge, I constantly make an effort to think from a complete beginner’s perspective; <strong>my idea of <em>not difficult</em> is very much not universal.</strong> My idea was to come up with a challenge that seemed, to me, right on the verge of becoming trivial. Hopefully I’d hit just the right spot.</p>
+<h3 id="The-drafting-plan"><a href="#The-drafting-plan" class="headerlink" title="The drafting plan"></a>The drafting plan</h3><p>When designing the <a target="_blank" rel="noopener" href="https://github.com/Iscaraca/CTF-Challenges/tree/main/welcomectf2025/this-is-just-one-of-those-classic-web-challenges">challenge</a>, my strategy was to <strong>start with a trivial vulnerability</strong> in a common language as a base. This could be SSTI, XSS, etc. I’d then <strong>add only one trivial obstacle.</strong> It could be a really simple WAF, or a hidden form field, but <em>that’s all I could add</em>. I ended up deciding on an SQLi, but the app overwrites the injectable variable with another value before the query, requiring participants to perform a simple bypass.</p>
+<p>This method <strong>worked surprisingly well</strong>. Over 70 teams managed to solve the challenge, and I got some nice comments about the learning experience it provided. Many teams struggled for quite a while on it, but most of them were able to get the flag before the CTF ended. That’s satisfaction.</p>
+<h3 id="Okay-enough-praise"><a href="#Okay-enough-praise" class="headerlink" title="Okay, enough praise"></a>Okay, enough praise</h3><p>The challenge didn’t come without its flaws. In hindsight, the challenge was too unfocused, and led many solvers down many different rabbit holes. I’d argue that rabbit holes are fun for regular CTF challenges, but we’re <strong>prioritising the main learning objective</strong> here, so</p>
+<ul>
+<li>I shouldn’t have included the Docker setup scripts in the dist. These are useful and important for other CTFs, but only serve to confuse beginners. They wouldn’t be spawning local instances anyway.</li>
+<li>The scripts are too long, and contain useless information “for the plot”. The website needs to be barren, to focus the student’s attention on the actual vulnerability.</li>
+<li>PHP is not a very readable language for beginners. I am not sure why I even used PHP in the first place. In hindsight, having readable, simple to follow code is very important, and a language like python would fit the bill a lot better.</li>
+</ul>
+<h3 id="What-about-the-grander-scheme-of-things"><a href="#What-about-the-grander-scheme-of-things" class="headerlink" title="What about the grander scheme of things?"></a>What about the grander scheme of things?</h3><p>CTFs don’t just have one challenge per category. <em>So what now? Just make everything a good introductory challenge?</em></p>
+<p>Well no. Not only do you need to cater challenges for teams that are slightly more skilled, you also need to give teams room to grow after completing an introductory challenge. In my opinion, <strong>having a linear, unconfused path to follow is best, especially in something as hard to find your footing in as cybersecurity</strong>, so a harder challenge needs to build on an introductory challenge in a meaningful way.</p>
+<p>This could be something like having the same base vulnerability but with a taller obstacle (a more robust WAF), or chaining something simple on top of the base.</p>
+<p>In a category with 5 challenges, I’d like 2 introductory challenges, 2 challenges that build on each one, and a final hard challenge. It’s more à la workshop&#x2F;training platform than actual CTF, but for something specifically meant for people just starting out, I think thats fine.</p>
+<h3 id="What-about-people-smurfing-YOU-NEED-SMURFCATCHER-CHALLENGES-TO-KEEP-THEM-AT-BAY"><a href="#What-about-people-smurfing-YOU-NEED-SMURFCATCHER-CHALLENGES-TO-KEEP-THEM-AT-BAY" class="headerlink" title="What about people smurfing? YOU NEED SMURFCATCHER CHALLENGES TO KEEP THEM AT BAY!!!!"></a>What about people smurfing? YOU NEED <em>SMURFCATCHER CHALLENGES</em> TO KEEP THEM AT BAY!!!!</h3><p>For CTFs like Cyberthon with a wide range of skill levels, sure. Maybe put one or two in each category. For completely introductory CTFs? Not necessary. </p>
+<h2 id="2026"><a href="#2026" class="headerlink" title="2026 - ?"></a>2026 - ?</h2><p>I’ll be making challenges for Welcome CTF again, probably. Maybe for other introductory CTFs too. I’ll update this post with any further insights I get. Thanks for reading this far. I hope you learnt something from my blundering around.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://Iscaraca.github.io">Iscara</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://iscaraca.github.io/2025/09/18/introductory/">http://iscaraca.github.io/2025/09/18/introductory/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Challenge-Creation/">Challenge Creation</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/06/14/cddc-2025/" title="DSTA BrainHack CDDC 2025 Writeups"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">DSTA BrainHack CDDC 2025 Writeups</div></div><div class="info-2"><div class="info-item-1">I participated under youtiaos again, going from 3rd place JC in 2024 to 3rd place Uni in 2025. Ended up not even mattering all that much because we would’ve won the same amount of money in Pre-U anyway. Shoutout to my team members, I never get tired playing with them. This year’s CDDC was pretty good. It seems like DSTA has finally managed to carve out a solid niche for themselves in the local CTF space, making the competition uniquely engaging. The OT challenges are fun (albeit reused) and...</div></div></div></a><a class="pagination-related" href="/2025/10/10/defcon-2025/" title="DEFCON33 takeaway bento box"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">DEFCON33 takeaway bento box</div></div><div class="info-2"><div class="info-item-1">DEFCON33 was really fun. It was my first one, and you know what they say about firsts. I definitely had some preconceptions about the event, that it was going to be some cyberpunky, neon-drenched event with giant flying robotic dragons everywhere and cool technical demonstrations around every corner. Only that last one was true. I’ll share my thoughts on the event and my overall experience there (it was my first time in the States too), making this more of a vibes-based blog post rather than...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/08/01/cyberthon-2023/" title="Cyberthon 2023 - Astockalypse (Author Writeup + Notes)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-01</div><div class="info-item-2">Cyberthon 2023 - Astockalypse (Author Writeup + Notes)</div></div><div class="info-2"><div class="info-item-1">Cyberthon is an annual CTF competition targeted towards JC students in Singapore, jointly organised by HCI, CSIT, and the DIS. This year, I had the opportunity to author a challenge for the data science category, and Astockalypse was what I came up with. At the end of this writeup are my thoughts before, during and after challenge creation, and how I could’ve improved from a creative and a technical standpoint. Challenge 📘 Challenge description: One of your agents has found a proprietary...</div></div></div></a><a class="pagination-related" href="/2024/05/04/cyberthon-2024/" title="Cyberthon 2024 - The Galaxy&#39;s Best Smuggler"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-04</div><div class="info-item-2">Cyberthon 2024 - The Galaxy&#39;s Best Smuggler</div></div><div class="info-2"><div class="info-item-1">Cyberthon is an annual CTF competition targeted towards JC students in Singapore. This year, I had the opportunity to author a challenge for the web category: The Galaxy’s Best Smuggler. At the end of this writeup are my thoughts on challenge creation. Challenge 📘 Challenge description: “Ever heard of sabacc?” “I’ve played it a couple times.” You eye the stifling pile of credit on Lando’s side of the table, allowing yourself a wry smile. “Having a good day, I reckon.” “Oh, you ain’t seen...</div></div></div></a><a class="pagination-related" href="/2023/10/21/tisc-2023/" title="TISC 2023 - Blind SQL Injection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-21</div><div class="info-item-2">TISC 2023 - Blind SQL Injection</div></div><div class="info-2"><div class="info-item-1">TISC is a two-week online sequential style CTF competition hosted by CSIT, where participants solve a series of 10 challenges. Over 1000 participants took on the challenges, with the top three levels of challenges having a cash prize pool of $10,000 each to be shared between participants who successfully cleared the respective levels. I was given the opportunity to create the challenge at level 8, and I’ll be sharing the writeup as well as a few of my thoughts at the end of the blog...</div></div></div></a><a class="pagination-related" href="/2024/10/16/tisc-2024/" title="TISC 2024 - Baby Flagchecker"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-16</div><div class="info-item-2">TISC 2024 - Baby Flagchecker</div></div><div class="info-2"><div class="info-item-1">TISC is a two-week online sequential style CTF competition hosted by CSIT, where participants solve a series of 12 challenges. Over 1300 participants took on the challenges, with the top three levels of challenges having a cash prize pool of $10,000 each to be shared between participants who’ve successfully cleared the respective levels. I was given the opportunity to create the challenge at level 7, a Web3 reverse engineering&#x2F;binary exploitation challenge. I’ll be sharing the writeup,...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Iscara</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Iscaraca" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://www.linkedin.com/in/isaaccjd/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2023-Cyberthon"><span class="toc-number">1.</span> <span class="toc-text">2023 - Cyberthon</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#On-JC-students"><span class="toc-number">1.1.</span> <span class="toc-text">On JC students</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-data-science-category"><span class="toc-number">1.2.</span> <span class="toc-text">The data science category</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-Cyberthon-wasn%E2%80%99t-effective-for-me"><span class="toc-number">1.3.</span> <span class="toc-text">Why Cyberthon wasn’t effective for me</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2024-Cyberthon"><span class="toc-number">2.</span> <span class="toc-text">2024 - Cyberthon</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#My-challenge-ended-up-being-TOO-difficult%E2%80%A6"><span class="toc-number">2.1.</span> <span class="toc-text">My challenge ended up being TOO difficult…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-folly-of-indulgence"><span class="toc-number">2.2.</span> <span class="toc-text">The folly of indulgence</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2025-Greyhats-Welcome-CTF"><span class="toc-number">3.</span> <span class="toc-text">2025 - Greyhats Welcome CTF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-drafting-plan"><span class="toc-number">3.1.</span> <span class="toc-text">The drafting plan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Okay-enough-praise"><span class="toc-number">3.2.</span> <span class="toc-text">Okay, enough praise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-about-the-grander-scheme-of-things"><span class="toc-number">3.3.</span> <span class="toc-text">What about the grander scheme of things?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-about-people-smurfing-YOU-NEED-SMURFCATCHER-CHALLENGES-TO-KEEP-THEM-AT-BAY"><span class="toc-number">3.4.</span> <span class="toc-text">What about people smurfing? YOU NEED SMURFCATCHER CHALLENGES TO KEEP THEM AT BAY!!!!</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2026"><span class="toc-number">4.</span> <span class="toc-text">2026 - ?</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-color: #0e1111;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Iscara</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Background images from <a target="_blank" rel="noopener" href="https://braceyourselfgames.com/cobalt-core/">Cobalt Core</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="What are you looking for?" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

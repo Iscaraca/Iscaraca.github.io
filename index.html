@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Iscara - More than just puzzles, but not by a lot.</title><meta name="author" content="Iscara"><meta name="copyright" content="Iscara"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Iscara">
+<meta property="og:url" content="http://iscaraca.github.io/index.html">
+<meta property="og:site_name" content="Iscara">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://iscaraca.github.io/img/avatar-icon.png">
+<meta property="article:author" content="Iscara">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://iscaraca.github.io/img/avatar-icon.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://iscaraca.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Iscara',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/cobaltcore-bg.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/cobaltcore.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Iscara</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Iscara</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Iscaraca" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://www.linkedin.com/in/isaaccjd/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/10/10/defcon-2025/" title="DEFCON33 takeaway bento box">DEFCON33 takeaway bento box</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-10-09T16:00:00.000Z" title="Created 2025-10-10 00:00:00">2025-10-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Life/">Life</a></span></div><div class="content">DEFCON33 was really fun. It was my first one, and you know what they say about firsts. I definitely had some preconceptions about the event, that it was going to be some cyberpunky, neon-drenched event with giant flying robotic dragons everywhere and cool technical demonstrations around every corner. Only that last one was true. I’ll share my thoughts on the event and my overall experience there (it was my first time in the States too), making this more of a vibes-based blog post rather than...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/09/18/introductory/" title="The Art Of Writing A Good Introductory CTF Challenge">The Art Of Writing A Good Introductory CTF Challenge</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-09-17T16:00:00.000Z" title="Created 2025-09-18 00:00:00">2025-09-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF-Writeups/">CTF Writeups</a></span></div><div class="content">Making challenges for beginners is a lot, lot tougher than making challenges for seasoned CTF players. The yoke of sparking fresh interest in cybersecurity always feels heavy on my shoulders, and there’s just so much to consider. Every time I try, there’s always something new I know I could improve on. This post is a reflection on my personal refinement of the process, and my definition of a good introductory CTF challenge. It’ll be framed by the challenges I’ve made in the past, my...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/14/cddc-2025/" title="DSTA BrainHack CDDC 2025 Writeups">DSTA BrainHack CDDC 2025 Writeups</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-06-13T16:00:00.000Z" title="Created 2025-06-14 00:00:00">2025-06-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF-Writeups/">CTF Writeups</a></span></div><div class="content">I participated under youtiaos again, going from 3rd place JC in 2024 to 3rd place Uni in 2025. Ended up not even mattering all that much because we would’ve won the same amount of money in Pre-U anyway. Shoutout to my team members, I never get tired playing with them. This year’s CDDC was pretty good. It seems like DSTA has finally managed to carve out a solid niche for themselves in the local CTF space, making the competition uniquely engaging. The OT challenges are fun (albeit reused) and...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/05/31/cobblestone-generator/" title="I Want To Build A Cobblestone Generator [WIP]"><img class="post-bg" src="/2025/05/31/cobblestone-generator/cobblestone-generator.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="I Want To Build A Cobblestone Generator [WIP]"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/05/31/cobblestone-generator/" title="I Want To Build A Cobblestone Generator [WIP]">I Want To Build A Cobblestone Generator [WIP]</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-05-30T16:00:00.000Z" title="Created 2025-05-31 00:00:00">2025-05-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Puzzles/">Puzzles</a></span></div><div class="content">I want to build cobblestone generators on ALL my skyblock world islands, so that an unlimited supply of my favourite block is always a stone’s throw away! I can never remember where the water and lava go though… mind helping me out? Here’s a quick tutorial I pulled up for your reference: Have fun, and thanks for the help! Island 1:Solve on Penpa (answer checking enabled) Island 2:Solve on Penpa (answer checking enabled) </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2025/02/24/no-three-1/" title="No Three 1 - I'll Come Back Around"><img class="post-bg" src="/2025/02/24/no-three-1/no-three-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No Three 1 - I'll Come Back Around"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/02/24/no-three-1/" title="No Three 1 - I'll Come Back Around">No Three 1 - I'll Come Back Around</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-02-23T16:00:00.000Z" title="Created 2025-02-24 00:00:00">2025-02-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Puzzles/">Puzzles</a></span></div><div class="content"> Classic No Three rules apply. Solve the puzzle on PuzzleSquare or puzzlink. </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/02/21/yajilin-1/" title="Yajilin 1 - Crossing The River"><img class="post-bg" src="/2025/02/21/yajilin-1/yajilin-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Yajilin 1 - Crossing The River"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/02/21/yajilin-1/" title="Yajilin 1 - Crossing The River">Yajilin 1 - Crossing The River</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-02-20T16:00:00.000Z" title="Created 2025-02-21 00:00:00">2025-02-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Puzzles/">Puzzles</a></span></div><div class="content"> Classic Yajilin rules apply. Solve the puzzle on PuzzleSquare or puzzlink. </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2025/02/19/masyu-1/" title="Masyu 1 - Meet In The Middle"><img class="post-bg" src="/2025/02/19/masyu-1/masyu-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Masyu 1 - Meet In The Middle"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/02/19/masyu-1/" title="Masyu 1 - Meet In The Middle">Masyu 1 - Meet In The Middle</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-02-18T16:00:00.000Z" title="Created 2025-02-19 00:00:00">2025-02-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Puzzles/">Puzzles</a></span></div><div class="content"> Classic Masyu rules apply. Solve the puzzle on PuzzleSquare or puzzlink. </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/02/14/valentines-2025/" title="Valentine's Day 2025 Puzzle - Shot Through The Heart"><img class="post-bg" src="/2025/02/14/valentines-2025/shot-through-the-heart.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Valentine's Day 2025 Puzzle - Shot Through The Heart"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/02/14/valentines-2025/" title="Valentine's Day 2025 Puzzle - Shot Through The Heart">Valentine's Day 2025 Puzzle - Shot Through The Heart</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-02-13T16:00:00.000Z" title="Created 2025-02-14 00:00:00">2025-02-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Puzzles/">Puzzles</a></span></div><div class="content"> Classic Shakashaka rules apply.Red lines must lie on the edges of rectangles. Solve the puzzle on Penpa. Happy Valentine’s Day! </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/10/16/tisc-2024/" title="TISC 2024 - Baby Flagchecker">TISC 2024 - Baby Flagchecker</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-10-15T16:00:00.000Z" title="Created 2024-10-16 00:00:00">2024-10-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF-Writeups/">CTF Writeups</a></span></div><div class="content">TISC is a two-week online sequential style CTF competition hosted by CSIT, where participants solve a series of 12 challenges. Over 1300 participants took on the challenges, with the top three levels of challenges having a cash prize pool of $10,000 each to be shared between participants who’ve successfully cleared the respective levels. I was given the opportunity to create the challenge at level 7, a Web3 reverse engineering&#x2F;binary exploitation challenge. I’ll be sharing the writeup,...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/04/cyberthon-2024/" title="Cyberthon 2024 - The Galaxy's Best Smuggler">Cyberthon 2024 - The Galaxy's Best Smuggler</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-05-03T16:00:00.000Z" title="Created 2024-05-04 00:00:00">2024-05-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF-Writeups/">CTF Writeups</a></span></div><div class="content">Cyberthon is an annual CTF competition targeted towards JC students in Singapore. This year, I had the opportunity to author a challenge for the web category: The Galaxy’s Best Smuggler. At the end of this writeup are my thoughts on challenge creation. Challenge 📘 Challenge description: “Ever heard of sabacc?” “I’ve played it a couple times.” You eye the stifling pile of credit on Lando’s side of the table, allowing yourself a wry smile. “Having a good day, I reckon.” “Oh, you ain’t seen...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Iscara</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Iscaraca" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://www.linkedin.com/in/isaaccjd/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF-Writeups/"><span class="card-category-list-name">CTF Writeups</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Life/"><span class="card-category-list-name">Life</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Puzzles/"><span class="card-category-list-name">Puzzles</span><span class="card-category-list-count">5</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Yajilin/" style="font-size: 1.1em; color: #999">Yajilin</a> <a href="/tags/Shakashaka/" style="font-size: 1.1em; color: #999">Shakashaka</a> <a href="/tags/Masyu/" style="font-size: 1.1em; color: #999">Masyu</a> <a href="/tags/Misc/" style="font-size: 1.1em; color: #999">Misc</a> <a href="/tags/No-Three/" style="font-size: 1.1em; color: #999">No Three</a> <a href="/tags/DEFCON/" style="font-size: 1.1em; color: #999">DEFCON</a> <a href="/tags/Web/" style="font-size: 1.3em; color: #99a1ac">Web</a> <a href="/tags/Challenge-Creation/" style="font-size: 1.5em; color: #99a9bf">Challenge Creation</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      <a class="card-more-btn" href="/archives/"
+            title="View More">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/10/">
+            <span class="card-archive-list-date">
+              October 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/09/">
+            <span class="card-archive-list-date">
+              September 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/06/">
+            <span class="card-archive-list-date">
+              June 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              May 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/02/">
+            <span class="card-archive-list-date">
+              February 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/10/">
+            <span class="card-archive-list-date">
+              October 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/05/">
+            <span class="card-archive-list-date">
+              May 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/04/">
+            <span class="card-archive-list-date">
+              April 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div></div></div></main><footer id="footer" style="background-color: #0e1111;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Iscara</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Background images from <a target="_blank" rel="noopener" href="https://braceyourselfgames.com/cobalt-core/">Cobalt Core</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (false) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  if (false) {
+    typedJSFn.init(["More than just puzzles, but not by a lot."])
+  } else {
+    document.getElementById("subtitle").textContent = "More than just puzzles, but not by a lot."
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="What are you looking for?" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

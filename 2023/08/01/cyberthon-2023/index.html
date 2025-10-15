@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Cyberthon 2023 - Astockalypse (Author Writeup + Notes) | Iscara</title><meta name="author" content="Iscara"><meta name="copyright" content="Iscara"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Cyberthon is an annual CTF competition targeted towards JC students in Singapore, jointly organised by HCI, CSIT, and the DIS. This year, I had the opportunity to author a challenge for the data scien">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cyberthon 2023 - Astockalypse (Author Writeup + Notes)">
+<meta property="og:url" content="http://iscaraca.github.io/2023/08/01/cyberthon-2023/index.html">
+<meta property="og:site_name" content="Iscara">
+<meta property="og:description" content="Cyberthon is an annual CTF competition targeted towards JC students in Singapore, jointly organised by HCI, CSIT, and the DIS. This year, I had the opportunity to author a challenge for the data scien">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://iscaraca.github.io/img/avatar-icon.png">
+<meta property="article:published_time" content="2023-07-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-15T13:17:09.058Z">
+<meta property="article:author" content="Iscara">
+<meta property="article:tag" content="Challenge Creation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://iscaraca.github.io/img/avatar-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cyberthon 2023 - Astockalypse (Author Writeup + Notes)",
+  "url": "http://iscaraca.github.io/2023/08/01/cyberthon-2023/",
+  "image": "http://iscaraca.github.io/img/avatar-icon.png",
+  "datePublished": "2023-07-31T16:00:00.000Z",
+  "dateModified": "2025-10-15T13:17:09.058Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Iscara",
+      "url": "http://iscaraca.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://iscaraca.github.io/2023/08/01/cyberthon-2023/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Cyberthon 2023 - Astockalypse (Author Writeup + Notes)',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/cobaltcore-bg.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/cobaltcore.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Iscara</span></a><a class="nav-page-title" href="/"><span class="site-name">Cyberthon 2023 - Astockalypse (Author Writeup + Notes)</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Cyberthon 2023 - Astockalypse (Author Writeup + Notes)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-07-31T16:00:00.000Z" title="Created 2023-08-01 00:00:00">2023-08-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-10-15T13:17:09.058Z" title="Updated 2025-10-15 21:17:09">2025-10-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF-Writeups/">CTF Writeups</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>Cyberthon is an annual CTF competition targeted towards JC students in Singapore, jointly organised by HCI, CSIT, and the DIS. This year, I had the opportunity to author a challenge for the data science category, and Astockalypse was what I came up with.</p>
+<p>At the end of this writeup are my thoughts before, during and after challenge creation, and how I could’ve improved from a creative and a technical standpoint.</p>
+<h2 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h2><blockquote>
+<p>📘 Challenge description:</p>
+<p>One of your agents has found a proprietary stock market prediction service after enumerating Apocalypse’s webservers!</p>
+<p>Are you able to exfiltrate their prediction algorithm for ehem “further analysis” before they disallow public access?</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/Iscaraca/CTF-Challenges/tree/main/cyberthon2023/astockalypse">Link to source code</a></p>
+<p>The challenge involves two separate websites, one being the website exposed on Apocalypse’s end and the other a submission portal to hand your investigation results in.</p>
+<p><img src="/2023/08/01/cyberthon-2023/mainpg.png" alt="Astockalypse front page"><br><img src="/2023/08/01/cyberthon-2023/mainpg2.png" alt="Submission front page"></p>
+<p>(I had a field day with these backgrounds btw)</p>
+<p>The former site takes in a csv file of data points, and will make a stock market price prediction for every row. The goal of the challenge is to successfully exfiltrate the model using a black-box method.</p>
+<h2 id="Writeup"><a href="#Writeup" class="headerlink" title="Writeup"></a>Writeup</h2><p>To extract the model, it doesn’t require much to come up with this simple three-step method:</p>
+<ol>
+<li>Craft and present samples to the target model. These will be your x values.</li>
+<li>Get enough samples and responses, or your y values, to build a solvable system of equations with the only unknowns now being the weights w and the model architecture f.</li>
+<li>Find information about f, and solve the equation to find w.</li>
+</ol>
+<p>What follows is the solution to the challenge, using python 3.</p>
+<h3 id="Generate-CSV-to-upload"><a href="#Generate-CSV-to-upload" class="headerlink" title="Generate CSV to upload"></a>Generate CSV to upload</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error, mean_absolute_error</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"></span><br><span class="line">t1_range = (<span class="number">1</span>, <span class="number">1000</span>)</span><br><span class="line">t2_range = (<span class="number">1</span>, <span class="number">1000</span>)</span><br><span class="line">t3_range = (<span class="number">1</span>, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate 200 random sets of 3 numbers to 1dp</span></span><br><span class="line">t1 = np.<span class="built_in">round</span>(np.random.uniform(t1_range[<span class="number">0</span>], t1_range[<span class="number">1</span>], size=<span class="number">200</span>), <span class="number">1</span>)</span><br><span class="line">t2 = np.<span class="built_in">round</span>(np.random.uniform(t2_range[<span class="number">0</span>], t2_range[<span class="number">1</span>], size=<span class="number">200</span>), <span class="number">1</span>)</span><br><span class="line">t3 = np.<span class="built_in">round</span>(np.random.uniform(t3_range[<span class="number">0</span>], t3_range[<span class="number">1</span>], size=<span class="number">200</span>), <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">query_df = pd.DataFrame(&#123;<span class="string">&#x27;t1&#x27;</span>: t1, <span class="string">&#x27;t2&#x27;</span>: t2, <span class="string">&#x27;t3&#x27;</span>: t3&#125;)</span><br><span class="line"></span><br><span class="line">query_df.to_csv(<span class="string">&#x27;query.csv&#x27;</span>, index=<span class="literal">False</span>, header=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="After-uploading-query-csv-and-downloading-output-csv"><a href="#After-uploading-query-csv-and-downloading-output-csv" class="headerlink" title="After uploading query.csv and downloading output.csv"></a>After uploading query.csv and downloading output.csv</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">output_df = pd.read_csv(<span class="string">&#x27;output.csv&#x27;</span>, index_col=<span class="literal">None</span>, header=<span class="literal">None</span>, names=[<span class="string">&#x27;price&#x27;</span>])</span><br><span class="line"></span><br><span class="line">query_df.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">output_df.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Combine x and y for visualisation purposes</span></span><br><span class="line">training_dataset = pd.concat([query_df, output_df], axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(training_dataset.head())</span><br><span class="line"><span class="built_in">print</span>(training_dataset.columns)</span><br><span class="line"></span><br><span class="line">X = training_dataset.drop(<span class="string">&#x27;price&#x27;</span>, axis=<span class="number">1</span>)</span><br><span class="line">y = training_dataset[<span class="string">&#x27;price&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fit model to data</span></span><br><span class="line">model = LinearRegression()</span><br><span class="line">model.fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dump as pkl file</span></span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;model.pkl&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(model, f)</span><br></pre></td></tr></table></figure>
+
+<p>Submitting the pkl file to the portal gives you the flag, <code>Cyberthon&#123;Ap0c4lypt1c_m4rk3t_cr45h!!!!!&#125;</code>.</p>
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>When I was asked to make a data science challenge for Cyberthon, I was kinda hesitant to do so. I remember being a participant in Cyberthon 3 years back, wondering why data science was even a category in a CTF competition. The standard for challenges of this category over the years has been kaggle-style problem statements, with metric-based grading systems for the models. The minor gripe I had with these problem statements was that they were scarcely related to cybersecurity if at all, and I could see participants being sceptical about the challenges and their relevance to their learning.</p>
+<p>Because of this, I started to research on adversarial machine learning techniques (<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Adversarial_machine_learning">the wikipedia</a> was a big help) and making wild storylines and ideas in my head for every possible attack strategy. Model extraction was by far the most feasible to implement, and I immediately set to work on a proof-of-concept.</p>
+<p>In the outset, the challenge relied very heavily on published attack strategies and required a respectable deal of research to solve. I got pretty carried away with what was possible that for a large portion of the initial creation I failed to take into account the target demographic and aim for the challenge, which was to introduce the possibilities data science had in launching cyberattacks without being too intimidating. I quickly double-backed on the original idea and came up with the simplest idea I could think of, which is the final product you see above.</p>
+<p>Having been a blur JC student previously also really helped put the difficulty into perspective. During the competition, I was glad to see that over 40 teams managed to solve Astockalypse, and I hope most of those teams left with awe and eager inquisitiveness as to what else is possible in this domain.</p>
+<p>In the effort to make the challenge more approchable, I gave plenty of hints and nudges as to how the participants were supposed to extract the model via the 3 step process. In hindsight, this decision was very much regrettable. Coming up with the steps by oneself and seeing it work is undoubtedly an essential part of the learning process, and it being taken away from some participants did take away from the whole challenge of it all. Next time I make a challenge like this, I’ll be sure to get plenty of feedback from not just my friends who have plenty of experience in programming and cybersecurity, but also people new to the sport to gauge the level of difficulty I should set the challenge at.</p>
+<p>Thank you to everyone who came down to watch me share the solution to the challenge during the Cyberthon meet-and-greet. It was a pleasure talking to some of you.</p>
+<h2 id="Making-the-challenge"><a href="#Making-the-challenge" class="headerlink" title="Making the challenge"></a>Making the challenge</h2><p>The notebook I used to train the model is <a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1rQdOvRevISmqfNSZHTnbdHrlZ3wpaOGz?usp=sharing">on colab</a>.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://Iscaraca.github.io">Iscara</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://iscaraca.github.io/2023/08/01/cyberthon-2023/">http://iscaraca.github.io/2023/08/01/cyberthon-2023/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Challenge-Creation/">Challenge Creation</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2023/10/21/tisc-2023/" title="TISC 2023 - Blind SQL Injection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">TISC 2023 - Blind SQL Injection</div></div><div class="info-2"><div class="info-item-1">TISC is a two-week online sequential style CTF competition hosted by CSIT, where participants solve a series of 10 challenges. Over 1000 participants took on the challenges, with the top three levels of challenges having a cash prize pool of $10,000 each to be shared between participants who successfully cleared the respective levels. I was given the opportunity to create the challenge at level 8, and I’ll be sharing the writeup as well as a few of my thoughts at the end of the blog...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/05/04/cyberthon-2024/" title="Cyberthon 2024 - The Galaxy&#39;s Best Smuggler"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-04</div><div class="info-item-2">Cyberthon 2024 - The Galaxy&#39;s Best Smuggler</div></div><div class="info-2"><div class="info-item-1">Cyberthon is an annual CTF competition targeted towards JC students in Singapore. This year, I had the opportunity to author a challenge for the web category: The Galaxy’s Best Smuggler. At the end of this writeup are my thoughts on challenge creation. Challenge 📘 Challenge description: “Ever heard of sabacc?” “I’ve played it a couple times.” You eye the stifling pile of credit on Lando’s side of the table, allowing yourself a wry smile. “Having a good day, I reckon.” “Oh, you ain’t seen...</div></div></div></a><a class="pagination-related" href="/2025/09/18/introductory/" title="The Art Of Writing A Good Introductory CTF Challenge"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-09-18</div><div class="info-item-2">The Art Of Writing A Good Introductory CTF Challenge</div></div><div class="info-2"><div class="info-item-1">Making challenges for beginners is a lot, lot tougher than making challenges for seasoned CTF players. The yoke of sparking fresh interest in cybersecurity always feels heavy on my shoulders, and there’s just so much to consider. Every time I try, there’s always something new I know I could improve on. This post is a reflection on my personal refinement of the process, and my definition of a good introductory CTF challenge. It’ll be framed by the challenges I’ve made in the past, my...</div></div></div></a><a class="pagination-related" href="/2023/10/21/tisc-2023/" title="TISC 2023 - Blind SQL Injection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-21</div><div class="info-item-2">TISC 2023 - Blind SQL Injection</div></div><div class="info-2"><div class="info-item-1">TISC is a two-week online sequential style CTF competition hosted by CSIT, where participants solve a series of 10 challenges. Over 1000 participants took on the challenges, with the top three levels of challenges having a cash prize pool of $10,000 each to be shared between participants who successfully cleared the respective levels. I was given the opportunity to create the challenge at level 8, and I’ll be sharing the writeup as well as a few of my thoughts at the end of the blog...</div></div></div></a><a class="pagination-related" href="/2024/10/16/tisc-2024/" title="TISC 2024 - Baby Flagchecker"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-16</div><div class="info-item-2">TISC 2024 - Baby Flagchecker</div></div><div class="info-2"><div class="info-item-1">TISC is a two-week online sequential style CTF competition hosted by CSIT, where participants solve a series of 12 challenges. Over 1300 participants took on the challenges, with the top three levels of challenges having a cash prize pool of $10,000 each to be shared between participants who’ve successfully cleared the respective levels. I was given the opportunity to create the challenge at level 7, a Web3 reverse engineering&#x2F;binary exploitation challenge. I’ll be sharing the writeup,...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Iscara</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Iscaraca" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://www.linkedin.com/in/isaaccjd/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Challenge"><span class="toc-number">1.</span> <span class="toc-text">Challenge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Writeup"><span class="toc-number">2.</span> <span class="toc-text">Writeup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-CSV-to-upload"><span class="toc-number">2.1.</span> <span class="toc-text">Generate CSV to upload</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#After-uploading-query-csv-and-downloading-output-csv"><span class="toc-number">2.2.</span> <span class="toc-text">After uploading query.csv and downloading output.csv</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thoughts"><span class="toc-number">3.</span> <span class="toc-text">Thoughts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Making-the-challenge"><span class="toc-number">4.</span> <span class="toc-text">Making the challenge</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-color: #0e1111;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Iscara</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Background images from <a target="_blank" rel="noopener" href="https://braceyourselfgames.com/cobalt-core/">Cobalt Core</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="What are you looking for?" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
