@@ -1,5 +1,5 @@
 ---
-title: DEFCON33 takeaway bento box
+title: DEFCON33 Takeaway Bento Box
 date: 2025-10-10
 tags: DEFCON
 categories: Life
