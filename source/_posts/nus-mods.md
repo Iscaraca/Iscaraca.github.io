@@ -1,5 +1,5 @@
 ---
-title: NUS Has Changed Me For The Worse.
+title: School is such a slog sometimes.
 date: 2025-12-02
 tags: School
 categories: Life
